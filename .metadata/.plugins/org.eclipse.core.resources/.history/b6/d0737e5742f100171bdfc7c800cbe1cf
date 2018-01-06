@@ -1,0 +1,65 @@
+package Pkge1;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import com.gargoylesoftware.htmlunit.javascript.host.Touch;
+
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.android.AndroidKeyCode;
+import io.appium.java_client.remote.AndroidMobileCapabilityType;
+import io.appium.java_client.remote.MobileCapabilityType;
+
+public class Class1 {
+
+	@SuppressWarnings("deprecation")
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+DesiredCapabilities c = new DesiredCapabilities();
+c.setCapability(MobileCapabilityType.DEVICE_NAME,"1b709bb3");
+c.setCapability("platformName",Platform.ANDROID);
+//c.setBrowserName("chrome");
+c.setCapability(AndroidMobileCapabilityType.AUTO_GRANT_PERMISSIONS,true);
+//c.setCapability("app","C:\\Users\\User\\Downloads\\Med Helper Pill Reminder_v2.8.6_apkpure.com.apk");
+c.setCapability("appPackage", "com.earthflare.android.medhelper.lite");
+c.setCapability("appActivity", "com.earthflare.android.medhelper.act2.Dashboard");
+
+
+try {
+	AndroidDriver<AndroidElement> driver =new AndroidDriver<AndroidElement>(new URL("http://localhost:4723/wd/hub"),c);
+	//driver.manage().window().maximize();
+	driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+	//driver.get("http://naukri.com");
+	
+	//AndroidElement vitals = driver.findElementById("com.earthflare.android.medhelper.lite:id/text_name").get(4);
+	//driver.findElementByXPath("//android.widget.TextView[text()='vitals'");
+	AndroidElement vitals = driver.findElementByAndroidUIAutomator("UiSelector().text(\"vitals\")");
+			driver.pressKeyCode(AndroidKeyCode.HOME);
+			TouchAction a= new TouchAction(driver);
+			Dimension d = driver.manage().window().getSize();
+			System.out.println(driver.manage().window().getSize());
+			a.press(d.width/2, d.height/2).perform();
+			try {
+				Thread.sleep(200);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			a.moveTo(d.width/2, d.height-500).perform();
+			a.release().perform();
+			//vitals.click();
+} catch (MalformedURLException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}
+
+	}
+
+}

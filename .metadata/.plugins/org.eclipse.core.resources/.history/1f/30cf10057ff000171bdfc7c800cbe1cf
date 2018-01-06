@@ -1,0 +1,10 @@
+package Pkge2;
+
+public class FrameSample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

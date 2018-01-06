@@ -1,0 +1,7 @@
+Feature: login onto magento
+line1 description
+line2 description
+
+scenario: happy path scenario
+given I am a registred user on magento
+when I upadate my user name and password

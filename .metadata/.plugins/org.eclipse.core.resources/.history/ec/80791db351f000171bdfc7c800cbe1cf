@@ -1,0 +1,32 @@
+package Pkage1;
+
+import java.awt.image.CropImageFilter;
+
+import javax.swing.text.ChangedCharSetException;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class InvokeBrowser {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//		WebDriver driver =new FirefoxDriver();
+		WebDriver driver1=new ChromeDriver();
+//		driver1.close();
+	//	driver1.quit();
+		
+		driver1.get("http://naukari.com");
+		//System.out.println(driver1.getCurrentUrl());
+		String url= driver1.getCurrentUrl();
+		System.out.println(url);
+		System.out.println("Security level"+ url.contains("https"));
+		System.out.println("Domin localization details " + url.contains("google.co.in"));
+		System.out.println(driver1.getWindowHandle());
+		System.out.println(driver1.getWindowHandles());
+		
+
+	}
+
+}

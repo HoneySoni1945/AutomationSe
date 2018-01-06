@@ -1,0 +1,42 @@
+package com.vodafone.basics;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class InputOutput {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+System.out.println("Hello");
+
+float a= 1.444444444444444f;
+System.out.print("world" +a);
+
+String k =" Hello 2";
+System.out.println(k.equals("hello")); 
+String b = k.substring(2);
+System.out.println(k.compareTo("Honey"));
+System.out.println(b);
+System.out.println(k.toLowerCase());
+System.out.println(k.compareToIgnoreCase("hello 2"));
+
+		int[] arr={1,2,3,4,5,6,7,8};
+		char[] ch={'a','f','g'};
+		System.out.println(arr[3]);
+		ArrayList<Integer> a = new ArrayList<Interger>();
+		a.add(1);
+		a.add(2);
+		a.add(3);
+		a.remove(2);
+		System.out.println(a.get(1));
+		int[] k =new int[10];
+		k[0]=1;
+		k[1]=2;
+		HashMap<Integer,String> hm = new HashMap<Integer,String>();
+		hm.put(1,"one");
+				
+		}
+
+	}
+
+

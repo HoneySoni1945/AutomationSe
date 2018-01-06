@@ -1,0 +1,10 @@
+package Pkage1;
+
+public class InvokeBrowser {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
